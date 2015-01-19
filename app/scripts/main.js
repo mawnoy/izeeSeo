@@ -8,7 +8,11 @@ $(window).load(function() {
     $('.spinner').fadeOut('slow');
             
       setTimeout(function() {
+<<<<<<< HEAD
       $('#preloader').fadeOut('slow'); 
+=======
+      $('#prelaoder').fadeOut('slow'); 
+>>>>>>> origin/master
             
       }, 700);    
           
@@ -16,6 +20,7 @@ $(window).load(function() {
        
 });
 
+<<<<<<< HEAD
 //************************//
 //   NavBar
 //************************//
@@ -23,3 +28,5 @@ $(window).load(function() {
 $("#toggle").on("click", function() {
 	$(".row-offcanvas").toggleClass("active");
 });
+=======
+>>>>>>> origin/master
