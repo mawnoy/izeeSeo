@@ -10,7 +10,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 
 @mixin animation($key, $duration, $timing, $delay ,$iteration, $direction){
   -webkit-animation: $key $duration $timing $delay $iteration $direction;
-  animation: $key $duration $timing $delay $iteration $direction;
+          animation: $key $duration $timing $delay $iteration $direction;
 }
 
 @mixin rotate($keyname, $from, $to) {
@@ -40,6 +40,12 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
       transform: rotate($to);
     }
   }
+}
+
+@mixin transition($delay) {
+  -webkit-transition: all $delay ease-out;
+         -o-transition: all $delay ease-out;
+            transition: all $delay ease-out;
 }
 
 
@@ -93,3 +99,25 @@ $intro-color: #ffc100;
 //=====================//
 //    NavigationBar
 //=====================//
+
+//=====================//
+//    offCanvas
+//=====================//
+
+.row-offcanvas {
+  position: relative;
+  @include transition(.25s);
+}
+
+.row-offcanvas-left {
+  left: 0;
+}
+
+.row-offcanvas-left.active {
+  left: (4/12)*100%;
+}
+
+.sidebar-offcanvas {
+  position: absolute;
+  width: (4/12)*100%;
+}
