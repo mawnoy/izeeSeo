@@ -20,6 +20,16 @@ $(window).load(function() {
 //   NavBar
 //************************//
 
-$("#toggle").on("click", function() {
-	$(".row-offcanvas").toggleClass("active");
-});
+$(document).ready(function() {
+	'use strict';
+	
+	$(window).on('resize', function() {
+		if ($(window).width() > 767) {
+		    $('.row-offcanvas').removeClass('active');
+		}
+	});
+
+	$('[data-toggle="offcanvas"]').click(function() {
+		$('.row-offcanvas').toggleClass('active');
+	});
+}); 

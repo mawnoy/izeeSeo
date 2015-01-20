@@ -3,6 +3,11 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
 
+$intro-color: #ffc100; //preloader bg color
+$color-clean: #fed501; // brand color
+$sidebar-bg: #434244;
+$sidebar-col: 8;
+$nav-height: 56px;
 
 //=====================//
 //    Mixin
@@ -44,16 +49,57 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 
 @mixin transition($delay) {
   -webkit-transition: all $delay ease-out;
-         -o-transition: all $delay ease-out;
+        -o-transition: all $delay ease-out;
             transition: all $delay ease-out;
 }
 
+@mixin sidebar($sidebar, $sidebar-col, $sidebar-delay) {
+  
+  .row-offcanvas {
+    position: relative;
+    @include transition($sidebar-delay);
+  }
+
+  .row-offcanvas-#{$sidebar} {
+    #{$sidebar}: 0;
+    &.active {
+      #{$sidebar}: ($sidebar-col/12) * 100%;
+    }
+    .sidebar-offcanvas {
+      #{$sidebar}: -(($sidebar-col/12) * 100%);
+    }
+  }
+
+  .sidebar-offcanvas {
+    position: absolute;
+    width: ($sidebar-col/12) * 100%;
+    background-color: $sidebar-bg;
+    height: 100%;
+  }
+
+}
 
 //=====================//
-//    Preloading
+//    utilityClass
 //=====================//
 
-$intro-color: #ffc100;
+.rm-margin {
+  margin: 0;
+}
+
+.padding-l {
+  padding: 0 0 0 20px;
+}
+
+//=====================//
+//    preLoading
+//=====================//
+
+/*------------- 
+
+    preLoading 
+
+--------------*/
 
 
 #preloader {
@@ -100,24 +146,65 @@ $intro-color: #ffc100;
 //    NavigationBar
 //=====================//
 
+/*------------- 
+
+    navBar 
+
+--------------*/
+
+.navbar {
+  margin-bottom: 0;
+}
+
+.navbar-clean {
+  background-color: $color-clean;
+  border: none;
+  li>a {
+    color: white;
+    height: $nav-height;
+    line-height: $nav-height/2;
+    &:hover {
+      background-color: rgba(255, 255, 255, .2);
+    }
+    &:focus {
+      background-color: rgba(255, 255, 255, .2);
+    }
+  }
+  .navbar-toggle {
+    border-radius: 0;
+    background-color: rgba(255, 255, 255, .2);
+    padding: 20px;
+    .icon-bar {
+      background-color: white;
+    }
+  }
+}
+
+.navbar-brand {
+  height: $nav-height;
+  line-height: $nav-height/2;
+}
+
 //=====================//
-//    offCanvas
+//    sideBar
 //=====================//
 
-.row-offcanvas {
-  position: relative;
-  @include transition(.25s);
-}
+/*------------- 
 
-.row-offcanvas-left {
-  left: 0;
-}
+    sideBar
 
-.row-offcanvas-left.active {
-  left: (4/12)*100%;
-}
+--------------*/
 
-.sidebar-offcanvas {
-  position: absolute;
-  width: (4/12)*100%;
+@include sidebar(left, $sidebar-col, .25s);
+
+.sidebar {
+  li>a {
+    color: white;
+    &:hover {
+      background-color: rgba(0, 0,0, .2);
+    }
+    &:focus {
+      background-color: rgba(0, 0, 0, .2);
+    }
+  }
 }
