@@ -24,18 +24,18 @@ $black-grey: #333;
 //=====================//
 
 $preload-color: $warm-red; //preloader bg color
-$brand-color: $deep-blue; // brand color
+$brand-color: $warm-red; // brand color
 $toggle-color: white;
 
 $nav-height: 56px;
-$navbar-dark-focus: $warm-red;
+$navbar-toggle-bg: $warm-red;
 
 $sidebar-bg: $light-grey;
-$sidebar-col: 8;
 
 $text-hilight: darken($warm-red, 2%);
 
-$btn-dark-hover: $light-blue;
+$btn-dark: $deep-blue;
+$btn-dark-hover: lighten($deep-blue, 10%);
 
 $sub-cover: $warm-red;
 
@@ -62,7 +62,7 @@ $sub-cover: $warm-red;
   transition: all $delay ease-out;
 }
 
-@mixin sidebar($sidebar, $sidebar-delay) {
+@mixin sidebar($sidebar, $sidebar-w,$sidebar-delay) {
   
   .row-offcanvas {
     position: relative;
@@ -71,14 +71,14 @@ $sub-cover: $warm-red;
   .sidebar-offcanvas {
     background-color: $sidebar-bg;
     box-shadow: -3px 0 3px rgba(0, 0, 0, 0.3);
-    width: 260px;
+    width: $sidebar-w;
     height: 100%;
     position: fixed;
     margin-top: $nav-height;
     padding-right: 0;
     padding-left: 0;
     z-index: 999;
-    #{$sidebar}: -260px;
+    #{$sidebar}: -($sidebar-w);
     @include transition($sidebar-delay);
     &.active {
       #{$sidebar}: 0;
@@ -98,25 +98,18 @@ body {
   min-height: 320px;
 }
 
-h1,h2,h3,h4,h5,h6 {
-  font-family: 'SourceSansProBlack';
-}
-
 .flat-theme {
   font-family: 'SourceSansProRegular';
   font-size: 18px;
-}
-
-p {
-  color: #777;
-}
-
-.portfolio-navbar {
-  ul {
-  padding: 0;
-    & > li {
-      margin-bottom: 15px;
-    }
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'SourceSansProBlack';
+  }
+  p {
+    color: #777;
   }
 }
 
@@ -143,14 +136,6 @@ p {
 
 .txt-shadow {
   text-shadow: 0 2px 3px rgba(0, 0, 0, .4);
-}
-
-.txt-shadow-strong {
-  text-shadow: 0 2px 0 rgba(darken($warm-red, 30%), .4);
-}
-
-.txt-shadow-strong-2 {
-  text-shadow: 0 2px 0 rgba(darken($warm-red, 30%), .4);
 }
 
 /*-- strech background to parents width & height --*/
@@ -196,9 +181,13 @@ p {
   border: 5px solid $warm-red;
 }
 
-.logo-text h1 {
+.logo-text {
   font-family: 'impact';
   color: lighten($warm-red, 25%);
+  text-shadow: 0 2px 0 rgba(darken($warm-red, 30%), .4);
+  &#{-hilight} {
+    color: $light-grey;
+  }
 }
 
 .head-text-2 {
@@ -229,7 +218,11 @@ p {
 .card {
   box-shadow: 2px 2px 4px rgba(darken($light-grey, 30%), .6);
   border: 1px solid rgba(black, .1);
-  background-color: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  &#{-light} {
+    background-color: lighten($light-grey, 3%);
+  }
 }
 
 .img-box {
@@ -242,7 +235,7 @@ p {
 }
 
 .btn-dark {
-  background-color: $brand-color;
+  background-color: $btn-dark;
   &:hover,
   &:focus {
     color: rgba(255, 255, 255, .8);
@@ -261,9 +254,6 @@ p {
 
 .text-hilight {
   color: $text-hilight;
-  &#{-logo} {
-    color: white;
-  }
 }
 
 .text {
@@ -356,7 +346,7 @@ p {
   margin-bottom: 0;
 }
 
-.navbar-dark {
+.navbar-flat {
   background-color: $light-grey;
   border: none;
   box-shadow: 3px 0 6px rgba(0, 0, 0, 0.8);
@@ -372,14 +362,14 @@ p {
     &:hover,
     &:focus {
       color: white;
-      background-color: $navbar-dark-focus;
+      background-color: $navbar-toggle-bg;
     }
   }
   .navbar-toggle {
     display: block !important; // don't hide.
     border: none;
     border-radius: 0;
-    background-color: $navbar-dark-focus;
+    background-color: $navbar-toggle-bg;
     padding: ($nav-height - 14)/2;
     .icon-bar {
       background-color: $toggle-color;
@@ -421,7 +411,7 @@ p {
   }
 }
 
-@include sidebar(right, .25s);
+@include sidebar(right, 260px,.25s);
 
 //=====================//
 //    top-cover
@@ -432,20 +422,7 @@ p {
     top-cover
 
 --------------*/
-
-.cover-bg {
-  color: white;
-  &:before {
-    background-color: rgba($warm-red, .8);
-  }
-  &:after {
-    z-index: -999;
-    background: url(/image/cover-3.jpg); // Declar this first.
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center center;
-  }
+.cover {
   .sub-logo {
     white-space:nowrap;
     margin-top: 60px;
@@ -486,36 +463,35 @@ p {
   }
 }
 
+.cover-bg {
+  color: white;
+  &:before {
+    background-color: rgba($warm-red, .8);
+  }
+  &:after {
+    z-index: -999;
+    background: url(/image/cover-3.jpg); // Declar this first.
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+  }
+}
+
 
 //=====================//
 //    services
 //=====================//
 
-.box-service {
-  background-color: lighten($light-grey, 3%);
-  padding: 20px;
-  border-top: 10px solid $warm-red;
-  border-right: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
-  border-left: 1px solid #ccc;
-
-}
 
 //=====================//
 //    sub-cover
 //=====================//
 
-.dis-table {
-  display: table-cell;
-}
-
 .sub-cover {
   width: 100%;
   height: 150px;
   background: $sub-cover;
-  @media (min-width: 768px) {
-    height: 250px;
-  }
 }
 
 //=====================//
@@ -528,9 +504,6 @@ p {
   border-bottom: 1px solid #eee;
   margin: 0 20px;
   padding: 80px 0 90px;
-  h3 {
-    color: #333;
-  }
 }
 
 
@@ -561,12 +534,19 @@ p {
 //    portfolio
 //=====================//
 
+.portfolio-navbar {
+  ul {
+  padding: 0;
+    & > li {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  }
+}
+
 .portfolio-box {
   border: 1px solid #aaa;
   padding: 20px 20px 0 20px;
-  .card {
-    margin-bottom: 20px;
-  }
 }
 
 //=====================//
