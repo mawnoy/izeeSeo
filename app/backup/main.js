@@ -28,16 +28,14 @@ $(window).load(function() {
 		}
 	};
 
-	checkClass();
-
-
 	$(window).on('resize', function() {
 		if ($(window).width() > 767) {
 		    $('.sidebar-offcanvas').removeClass('active');
 		}
 	});
 
-	
+	checkClass();
+
 
 
 	$('[data-toggle="offcanvas"]').click(function() {

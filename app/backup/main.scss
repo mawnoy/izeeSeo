@@ -4,7 +4,6 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 // endbower
 
 @import url(http://fonts.googleapis.com/css?family=Bree+Serif);
-@import "../bower_components/SourceSansPro/SourceSansPro.css";
 
 //=====================//
 //    Variables
@@ -23,7 +22,7 @@ $black-grey: #333;
 //    Variables
 //=====================//
 
-$preload-color: $warm-red; //preloader bg color
+$preload-color: $deep-blue; //preloader bg color
 $brand-color: $deep-blue; // brand color
 $toggle-color: white;
 
@@ -37,7 +36,7 @@ $text-hilight: darken($warm-red, 2%);
 
 $btn-dark-hover: $light-blue;
 
-$sub-cover: $warm-red;
+$sub-cover: $light-blue-2;
 
 //=====================//
 //    Mixin
@@ -102,7 +101,7 @@ h1,h2,h3,h4,h5,h6 {
   font-family: 'SourceSansProBlack';
 }
 
-.flat-theme {
+.dark-theme {
   font-family: 'SourceSansProRegular';
   font-size: 18px;
 }
@@ -512,7 +511,7 @@ p {
 .sub-cover {
   width: 100%;
   height: 150px;
-  background: $sub-cover;
+  background: $warm-red;
   @media (min-width: 768px) {
     height: 250px;
   }
@@ -541,7 +540,7 @@ p {
     height: 200px; // make image show
     @media (min-width: 1021px) {
       width: 300px; 
-      height: 200px;
+      height: 300px;
     }
     background-size: contain;
     background-repeat: no-repeat;
