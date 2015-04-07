@@ -145,50 +145,52 @@
                   </div>
                 </div>
                 <div class="col-sm-8">
-                  <ul class="pull-right" data-nav="port-nav">
-                    <li class="btn btn-dark light-grey">All</li>
-                    <li class="btn btn-dark light-grey">Web</li>
-                    <li class="btn btn-dark light-grey">2D/3D</li>
-                    <li class="btn btn-dark light-grey">Video</li>
+                  <ul class="pull-right btn-group" id="filters" data-nav="port-nav">
+                    <li class="btn btn-dark light-grey" data-filter="*">All</li>
+                    <li class="btn btn-dark light-grey" data-filter=".web">Web</li>
+                    <li class="btn btn-dark light-grey" data-filter=".3d">2D/3D</li>
+                    <li class="btn btn-dark light-grey" data-filter=".video">Video</li>
                   </ul>
                 </div>
               </nav>
-              <div class="portfolio-box">
+              <div class="portfolio-box" id="gallery">
                 
-                <div class="row">
-                  <div class="col-sm-4">
-                    <div class="card">
-                      <img width="100%" src="/image/work-1.png" alt="">
-                    </div>
-                  </div>
-                  <div class="col-sm-4">
-                    <div class="card">
-                      <img width="100%" src="/image/work-2.jpg" alt="">
-                    </div>
-                  </div>
-                  <div class="col-sm-4">
-                    <div class="card">
-                      <img width="100%" src="/image/work-3.png" alt="">
-                    </div>
-                  </div>
-                </div> <!-- end row -->
-                <div class="row">
-                  <div class="col-sm-4">
-                    <div class="card">
-                      <img width="100%" src="/image/work-1.png" alt="">
-                    </div>
-                  </div>
-                  <div class="col-sm-4">
-                    <div class="card">
-                      <img width="100%" src="/image/work-2.jpg" alt="">
-                    </div>
-                  </div>
-                  <div class="col-sm-4">
-                    <div class="card">
-                      <img width="100%" src="/image/work-3.png" alt="">
-                    </div>
-                  </div>
-                </div> <!-- end row -->
+                <div class="gallery-full">
+
+                      <div class="col-sm-4 item web">
+                        <div class="card">
+                          <img class="thumb-img" src="/image/work-1.png" alt="">
+                        </div>
+                      </div>
+                      <div class="col-sm-4 item 3d">
+                        <div class="card">
+                          <img class="thumb-img" src="/image/work-2.jpg" alt="">
+                        </div>
+                      </div>
+                      <div class="col-sm-4 item 3d">
+                        <div class="card">
+                          <img class="thumb-img" src="/image/work-3.png" alt="">
+                        </div>
+                      </div>
+
+
+                      <div class="col-sm-4 item video">
+                        <div class="card">
+                          <img class="thumb-img" src="/image/work-1.png" alt="">
+                        </div>
+                      </div>
+                      <div class="col-sm-4 item web">
+                        <div class="card">
+                          <img class="thumb-img" src="/image/work-2.jpg" alt="">
+                        </div>
+                      </div>
+                      <div class="col-sm-4 item video">
+                        <div class="card">
+                          <img class="thumb-img" src="/image/work-3.png" alt="">
+                        </div>
+                      </div>
+
+                </div>
               
               </div>
             </div> <!-- end container -->
@@ -280,6 +282,7 @@
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/isotope/dist/isotope.pkgd.js"></script>
     <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/affix.js"></script>
     <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/alert.js"></script>
     <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/button.js"></script>

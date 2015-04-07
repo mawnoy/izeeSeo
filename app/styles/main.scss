@@ -497,16 +497,12 @@ body {
 //=====================//
 //    services-box
 //=====================//
-
-
-
+//
 .service-sec {
   border-bottom: 1px solid #eee;
   margin: 0 20px;
   padding: 80px 0 90px;
 }
-
-
 
 .img {
     margin: 0 auto;
@@ -547,7 +543,19 @@ body {
 .portfolio-box {
   border: 1px solid #aaa;
   padding: 20px 20px 0 20px;
+  float: left;
+  width: 100%;
+  transition: all 0.8s;
 }
+
+.thumb-img {
+  width: 100%;
+}
+
+.gallery-full {
+  width: 100%;
+}
+
 
 //=====================//
 //    about us

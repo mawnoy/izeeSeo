@@ -44,4 +44,18 @@ $(window).load(function() {
 		$('.sidebar-offcanvas').toggleClass('active');
 	});
 
+// isotope
+
+	var $imgGallery = $('.gallery-full').isotope({
+	  itemSelector: '.item',
+	  filter: '*'
+	});
+
+	$('#filters').on('click', 'li', function() {
+		var filterValue = $(this).attr('data-filter');
+		$imgGallery.isotope({
+			filter: filterValue
+		});
+	});
+
 });
