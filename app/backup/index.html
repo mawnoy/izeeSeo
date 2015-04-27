@@ -21,7 +21,7 @@
     <!-- endbuild -->
   <!-- http://artool.me/ -->
   </head>
-  <body class="dark-theme"> <!-- ref site: http://cleancanvas.herokuapp.com/ //www.wunderlist.com/-->
+  <body class="flat-theme"> <!-- ref site: http://cleancanvas.herokuapp.com/ //www.wunderlist.com/-->
     
     <!-- PRELOADER -->
     <div id="preloader">
@@ -32,7 +32,7 @@
       </div>
     </div>
     <!-- /PRELOADER -->  
-    <nav class="navbar navbar-fixed-top navbar-dark" role="navigation">
+    <nav class="navbar navbar-fixed-top navbar-flat" role="navigation">
       <button class="navbar-toggle rm-mg" data-toggle="offcanvas" type="button">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
@@ -71,64 +71,78 @@
           </nav>
         </div> <!--end sidebar -->
 
-        <header class="full-screen bg-fit cover-bg bg-dotted">
+        <header class="cover cover-bg bg-dotted full-screen bg-fit">
           <div class="content-middle text-center">
-            <div class="logo-text txt-shadow-strong">
-              <h1 class="rm-mg">FOCUS ON THE <span class="text-hilight-logo">DETAIL</span></h1>
+            <div class="">
+              <h1 class="logo-text rm-mg">FOCUS ON | <span class="logo-text-hilight bd-rd-sm">DETAIL</span></h1>
             </div>
-            <div class="sub-logo">
-              <h3 class="sub-logo-box text-header bd-sm">Faizal Jaeumar</h3>
+            <div class="sub-logo sub-logo-block bd-sm bd-rd-sm">
+              <h3 class="my-name">Faizal Jaeumar</h3>
               <p class="caption">Graphic & web designer</p>
+            </div>
+            <div class="social-icon-grp">
+              <a href="#" class="icon icon-mono facebook bd-sm">facebook</a>
+              <a href="#" class="icon icon-mono twitter bd-sm">twitter</a>
+              <a href="#" class="icon icon-mono googleplus bd-sm">youtube</a>
             </div>
           </div>
         </header> <!-- end head-cover -->
  
         <main class="content" role="main">
           <article class="services">
-            <section class="sub-cover text-center box-shadow-top">
+            <section class="quote-block text-center box-shadow-top">
               <div class="container content-middle text-center">
-                <h2 class="text-lg light-grey head-text-2 txt-shadow-strong">{  Working with Passion  }</h2>
+                <h2 class="quote-text">Working with Passion</h2>
               </div>
             </section> <!-- end sub-cover -->
 
-            <section class="service-sec text-center">
+            <section class="service-sec">
               <div class="container">
                 <div class="row services-box">
                   <div class="col-sm-4">
-                    <figure class="box-service box-shadow bd-rd-sm">
-                      <div class="img img-web-design card"></div>
-                      <figcaption>
-                        <h3><span class="text-hilight">WEB</span> DESIGN</h3>
-                        <p>
-                          Html5 | CSS3 | Sass | Java script | jQuery
-                        </p>
-                        <a href="/services/Web-design.html">See more</a>
-                      </figcaption>
+                    <figure class="box-service card card-light pie-site" id="pie-0" data-pie="8">
+                      <div class="icon-skill icon-html">Html5</div>
                     </figure>
                   </div>
                   <div class="col-sm-4">
-                    <figure class="box-service box-shadow bd-rd-sm">
-                      <div class="img img-graphic-design card"></div>
-                      <figcaption>
-                        <h3><span class="text-hilight">GRAPHIC</span> DESIGN</h3>
-                        <p>
-                          Photoshop | Illustrator | Lightroom
-                        </p>
-                        <a href="/services/Graphic-design.html">See more</a>
-                      </figcaption>
+                    <figure class="box-service card card-light pie-site" id="pie-1" data-pie="7.5">
+                      <div class="icon-skill icon-css">Css3</div>
                     </figure>
                   </div>
                   <div class="col-sm-4">
-                    <figure class="box-service box-shadow bd-rd-sm">
-                      <div class="img img-video-editor card"></div>
-                      <figcaption>
-                        <h3><span class="text-hilight">VIDEO</span> EDITOR</h3>
-                        <p>
-                          After effect | Maya | Cinema4D
-                        </p>
-                        <a href="/services/video-editor.html">See more</a>
-                      </figcaption>
+                    <figure class="box-service card card-light pie-site" id="pie-2" data-pie="6.5">
+                      <div class="icon-skill icon-js">JavaScript</div>
                     </figure>
+                  </div>
+                  <div class="col-sm-4">
+                    <figure class="box-service card card-light pie-site" id="pie-3" data-pie="7">
+                      <div class="icon-skill icon-jquery">jQuery</div>
+                    </figure> 
+                  </div>
+                  <div class="col-sm-4">
+                    <figure class="box-service card card-light pie-site" id="pie-4" data-pie="7">
+                      <div class="icon-skill icon-sass">Sass</div>
+                    </figure> 
+                  </div>
+                  <div class="col-sm-4">
+                    <figure class="box-service card card-light pie-site" id="pie-5" data-pie="7.5">
+                      <div class="icon-skill icon-ps">Photoshop</div>
+                    </figure>
+                  </div>
+                  <div class="col-sm-4">
+                    <figure class="box-service card card-light pie-site" id="pie-6" data-pie="8">
+                      <div class="icon-skill icon-ai">Illustrator</div>
+                    </figure> 
+                  </div>
+                  <div class="col-sm-4">
+                    <figure class="box-service card card-light pie-site" id="pie-7" data-pie="6.5">
+                      <div class="icon-skill icon-ae">After Effect</div>
+                    </figure> 
+                  </div>
+                  <div class="col-sm-4">
+                    <figure class="box-service card card-light pie-site" id="pie-8" data-pie="7.5">
+                      <div class="icon-skill icon-maya">Autodesk Maya</div>
+                    </figure> 
                   </div>
                 </div>
               </div>
@@ -146,7 +160,7 @@
                 </div>
                 <div class="col-sm-8">
                   <ul class="pull-right" data-nav="port-nav">
-                    <li class="btn btn-dark light-grey">All</li>
+                    <li class="btn btn-dark  light-grey">All</li>
                     <li class="btn btn-dark light-grey">Web</li>
                     <li class="btn btn-dark light-grey">2D/3D</li>
                     <li class="btn btn-dark light-grey">Video</li>
@@ -205,7 +219,7 @@
                       <div class="col-sm-12">
                         <figure>
                           <div class="card img-box box-profile box-circle"></div>
-                          <figcaption class="mg-top-md text-header text-md">
+                          <figcaption class="mg-top-md text-md">
                             Mr.Faizal Jaeumar
                           </figcaption>
                         </figure>

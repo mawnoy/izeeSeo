@@ -3,19 +3,24 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
 
-@import url(http://fonts.googleapis.com/css?family=Bree+Serif);
-@import "../bower_components/SourceSansPro/SourceSansPro.css";
+@import url(http://fonts.googleapis.com/css?family=Bree+Serif);  //use at sub-cover
+@import url(http://fonts.googleapis.com/css?family=Oleo+Script); //use at my name
+@import url(http://fonts.googleapis.com/css?family=Berkshire+Swash);
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,300);
+@import url(/bower_components/SourceSansPro/SourceSansPro.css);
 
 //=====================//
 //    Variables
 //=====================//
+$dark: #28272b;
+$deep-red: #a31F42;
 $deep-blue: #133848;
-$light-blue: #1c3a70;
-$light-blue-2: #1e304f;
 $light-grey: #eee;
 $strong-yellow: #ffbc00;
 $warm-red: #e25454;
-$warm-red-light: darken($warm-red, 20%);
+$warm-red-light: lighten($warm-red, 2%);
+$warm-pink: #f3afaf;
+$peach: #ff836c;
 $sun-flower: #f1c40f;
 $black-grey: #333;
 
@@ -23,8 +28,8 @@ $black-grey: #333;
 //    Variables
 //=====================//
 
-$preload-color: $warm-red; //preloader bg color
-$brand-color: $warm-red; // brand color
+$preload-color: $deep-red; //preloader bg color
+$brand-color: $deep-red; // brand color
 $toggle-color: white;
 
 $nav-height: 56px;
@@ -37,7 +42,7 @@ $text-hilight: darken($warm-red, 2%);
 $btn-dark: $deep-blue;
 $btn-dark-hover: lighten($deep-blue, 10%);
 
-$sub-cover: $warm-red;
+$sub-cover: $warm-red-light;
 
 //=====================//
 //    Mixin
@@ -96,11 +101,6 @@ body {
   overflow-x: hidden;
   min-width: 320px;
   min-height: 320px;
-}
-
-.flat-theme {
-  font-family: 'SourceSansProRegular';
-  font-size: 18px;
   h2,
   h3,
   h4,
@@ -113,6 +113,11 @@ body {
   }
 }
 
+.flat-theme {
+  font-family: 'SourceSansProRegular';
+  font-size: 18px;
+}
+
 //=====================//
 //    utilityClass
 //=====================//
@@ -121,21 +126,12 @@ body {
   box-shadow: 1px 1px 1px rgba($black-grey, .4);
 }
 
-.caption  {
-  font-family: 'SourceSansProExtralt';
-  letter-spacing: 8px;
-}
-
 .bd-rd-sm {
   border-radius: 5px;
 }
 
 .box-shadow-top {
   box-shadow: 0 -2px 5px rgba(darken($warm-red, 35%), .4);
-}
-
-.txt-shadow {
-  text-shadow: 0 2px 3px rgba(0, 0, 0, .4);
 }
 
 /*-- strech background to parents width & height --*/
@@ -174,25 +170,7 @@ body {
 }
 
 .bd-sm {
-  border: 1px solid $light-grey;
-}
-
-.bd-lg {
-  border: 5px solid $warm-red;
-}
-
-.logo-text {
-  font-family: 'impact';
-  color: lighten($warm-red, 25%);
-  text-shadow: 0 2px 0 rgba(darken($warm-red, 30%), .4);
-  &#{-hilight} {
-    color: $light-grey;
-  }
-}
-
-.head-text-2 {
-  font-family: 'Bree Serif', serif;
-  letter-spacing: 2px;
+  border: 1px solid rgba($light-grey, .15);
 }
 
 .mg-top-md {
@@ -268,9 +246,6 @@ body {
     @media (min-width: 768px) {
       font-size: 36px;
     }
-  }
-  &#{-header} {
-    font-family: "BoonTook Ultra";
   }
 }
 
@@ -369,7 +344,7 @@ body {
     display: block !important; // don't hide.
     border: none;
     border-radius: 0;
-    background-color: $navbar-toggle-bg;
+    background-color: $deep-red;
     padding: ($nav-height - 14)/2;
     .icon-bar {
       background-color: $toggle-color;
@@ -423,32 +398,38 @@ body {
 
 --------------*/
 .cover {
-  .sub-logo {
-    white-space:nowrap;
-    margin-top: 60px;
-    @media (max-height: 480px) {
-      margin-top: 20px;
-    }
-  }
-  .sub-logo-box {
-    width: 250px;
-    margin: 10px auto;
-    padding: 20px;
-    @media (min-width: 767px) {
-      width: 350px;
-    }
-  }
-  h1 {
-    font-size: 52px;
+  .logo-text {
+    font-family: 'impact';
+    color: white;
+    text-shadow: 0 2px 0 rgba(darken($warm-red, 80%), .4);
+    font-size: 38px;
     @media (min-width: 768px) {
       font-size: 72px;
     }
     @media (min-width: 1280px) {
       font-size: 112px;
     }
+    &#{-hilight} {
+      color: $light-grey;
+      background-color: $deep-red;
+      padding: 0 18px 0 18px;
+    }
   }
-  h3 {
-    font-size: 20px;
+  .sub-logo {
+    margin: 60px auto 0 auto;
+    @media (max-height: 480px) {
+      margin-top: 20px;
+    }
+  }
+  .sub-logo-block {
+    background-color: rgba(white, .1);
+    width: 100%;
+    padding: 20px;
+    white-space:nowrap;
+  }
+  .my-name {
+    font-family: 'Oswald', sans-serif;
+    font-size: 26px;
     color: white;
     letter-spacing: 2px;
     @media (min-width: 768px) {
@@ -458,15 +439,21 @@ body {
       font-size: 32px;
     }
   }
-  p {
-      color: white;
+  .caption {
+    font-size: 12px;
+    color: opacify(rgba(255, 255, 255, 0.3), 0.3);
+    font-family: 'SourceSansProRegular';
+    letter-spacing: 2px;
+    @media (min-width: 768px) {
+      font-size: 18px;
+    }
   }
 }
 
 .cover-bg {
   color: white;
   &:before {
-    background-color: rgba($warm-red, .8);
+    background: linear-gradient(90deg, rgba($dark, 0.6), rgba($dark, 1));
   }
   &:after {
     z-index: -999;
@@ -479,30 +466,222 @@ body {
 }
 
 
+/*------------- 
+
+    social-icon
+
+--------------*/
+
+.social-icon-grp {
+  margin-top: 50px;
+}
+
+.icon {
+  display: inline-block;
+  vertical-align: top;
+  overflow: hidden;
+  margin: 0 22px 0 0;
+  width: 76px;
+  height: 76px;
+  font-size: 0;
+  text-indent: -9999px;
+}
+
+.icon-mono {
+  border-radius: 60px;
+  background: url(/image/icons1.png);
+  background-image: url(/image/icons1.svg), none;
+  background-color: #595959;
+  transition: background .3s;
+  background-size: 480%;
+}
+
+.facebook {
+  background-position: 0 0;
+  &:hover {
+    background-color: #3b5998;
+    background-position: 0 -76px;
+  }
+}
+
+.twitter {
+  background-position: -70px 0;
+  &:hover {
+    background-color: #4099ff;
+    background-position: -70px -76px;
+  }
+}
+
+.googleplus {
+  background-position: -142px 0;
+  &:hover {
+    background-color: #d34836;
+    background-position: -142px -76px;
+  }
+}
+
 //=====================//
 //    services
 //=====================//
 
+.skill-bar {
+  list-style: none;
+  padding: 0;
+}
+
+.icon-skill {
+  display: block;
+  width: 138px;
+  height: 138px;
+  background-image: url(/image/webdev-icon.png);
+  text-indent: -9999;
+  font-size: 0;
+  position: absolute;
+}
+
+.box-service {
+  width: 180px;
+  height: 180px;
+  border-radius:100px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+}
+
+.icon-html {
+  background-size: 200%;
+  background-position: 22px -20px;
+  clip: rect(0px, 120px, 205px, 25px);
+}
+
+.icon-css {
+  background-size: 200%;
+  background-position: 118px -20px;
+  clip: rect(0px, 120px, 205px, 25px);
+}
+
+.icon-js {
+  background-size: 200%;
+  background-position: 205px 13px;
+  clip: rect(0px, 118px, 205px, 25px);
+}
+
+.icon-jquery {
+  background-image: url(/image/jquery-icon.png);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position: 14px 10px;
+}
+
+.icon-sass {
+  background-image: url(/image/sass-icon.png);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position: 16px 26px;
+}
+
+.icon-ps {
+  background-image: url(/image/ps-icon.svg);
+  background-repeat: no-repeat;
+  background-size: 70%;
+  background-position: 20px 20px;
+}
+
+.icon-ai {
+  background-image: url(/image/ai-icon.png);
+  background-repeat: no-repeat;
+  background-size: 70%;
+  background-position: 20px 20px;
+}
+
+.icon-ae {
+  background-image: url(/image/ae-icon.png);
+  background-repeat: no-repeat;
+  background-size: 70%;
+  background-position: 20px 20px;
+}
+
+.icon-maya {
+  background-image: url(/image/maya-icon.png);
+  background-repeat: no-repeat;
+  background-size: 70%;
+  background-position: 20px 20px;
+}
+
+.pie-site:after {
+  content: " ";
+  display: block;
+  background-color: #d8d8d8;
+  position: relative;
+  width: 205px;
+  height: 205px;
+  margin: auto;
+  z-index: -999;
+  left: -33px;
+  top: -33px;
+  border-radius: 50%;
+}
+
+.pie-site > #slice {
+  width: 138px;
+  height: 138px;
+  position: absolute;
+  clip: rect(-30px, 170px, 164px, 70px);
+}
+
+.pie-site>#slice.gt50 {
+  clip:rect(-30px, 170px, 164px, -30px);
+}
+
+.pie-site>#slice>.pie {
+  padding: 90px;
+  position:absolute;
+  border:5px solid #444;
+  width:158px;
+  height:158px;
+  left: -26px;
+  top: -26px;
+  border-radius: 50%;
+  clip: rect(-30px, 95px, 190px, 0);
+}
+
+.pie-site>#slice>.pie.fill {
+  left: -26px;
+  top: -26px;
+  transform :rotate(180deg) !important;
+}
 
 //=====================//
-//    sub-cover
+//    quote-block
 //=====================//
 
-.sub-cover {
+.quote-block {
   width: 100%;
   height: 150px;
-  background: $sub-cover;
+  background-image: linear-gradient(45deg,#FC736E 0,#810032 100%);
+}
+
+.quote-text {
+  font-size: 18px; 
+  color: $light-grey; 
+  font-family: "Helvetica";
+  letter-spacing: 5px;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, .2);
 }
 
 //=====================//
 //    services-box
 //=====================//
-//
+
+
+
 .service-sec {
   border-bottom: 1px solid #eee;
   margin: 0 20px;
   padding: 80px 0 90px;
 }
+
+
 
 .img {
     margin: 0 auto;
@@ -516,13 +695,13 @@ body {
     background-repeat: no-repeat;
     background-position: center center;
   &#{-web-design} {
-    background-image: url('/image/web-design.png');
+    background-image: url(/image/web-design.png);
   }
   &#{-graphic-design} {
-    background-image: url('/image/graphic-design.png');
+    background-image: url(/image/graphic-design.png);
   }
   &#{-video-editor} {
-    background-image: url('/image/video-editor.png');
+    background-image: url(/image/video-editor.png);
   }
 }
 
@@ -543,19 +722,7 @@ body {
 .portfolio-box {
   border: 1px solid #aaa;
   padding: 20px 20px 0 20px;
-  float: left;
-  width: 100%;
-  transition: all 0.8s;
 }
-
-.thumb-img {
-  width: 100%;
-}
-
-.gallery-full {
-  width: 100%;
-}
-
 
 //=====================//
 //    about us
